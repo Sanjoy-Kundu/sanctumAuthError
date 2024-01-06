@@ -4,6 +4,7 @@
         <div class="mb-3">
             <label for="">Name</label>
             <input type="text" id="name" class="form-control" placeholder="Enter Your Information">
+            
         </div>
         <div class="mb-3">
             <label for="">Email</label>

@@ -21,7 +21,7 @@
             <button onclick="onUpdate()" class="btn btn-success">Update</button>
         </div>
         <div class="mb-5">
-            <button class="btn btn-danger"><a href="{{url("/logout")}}">Logut</a></button>
+            <button class="btn btn-danger"><a href="#" onclick="unauthorized(401)">Logut</a></button>
         </div>
         <hr>
         {{-- <div>
@@ -58,7 +58,8 @@
 
 
 getProfile();
-    async function getProfile(){
+  async   function getProfile(){
+        //HeaderToken()
         try{
             showLoader();
             let res= await axios.get("/user-profile",HeaderToken());
@@ -69,6 +70,7 @@ getProfile();
 
         }catch (e) {
             unauthorized(e.response.status);
+            //console.log(e);
         }
     }
 

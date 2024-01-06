@@ -13,13 +13,13 @@ class UserController extends Controller
     
     
     public function userRegistration(Request $request){
-        // $request->validate([
+        $request->validate([
 
-        //     "name" => "required|max:50",
-        //     "email" => "required|max:50",
-        //     "mobile" => "required|max:50",
-        //     "password" => "required|max:50",
-        // ]);
+            "name" => "required|max:50",
+            "email" => "required|max:50",
+            "mobile" => "required|max:50",
+            "password" => "required|max:50",
+        ]);
 
         try{
             User::create([
@@ -71,7 +71,8 @@ class UserController extends Controller
 
     
     function UserLogout(Request $request){
-        $request->user()->tokens()->delete();
+       // $request->user()->tokens()->delete();
+       Auth::logout();
         return redirect('/userLogin');
     }
 

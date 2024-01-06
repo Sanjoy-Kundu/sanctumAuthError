@@ -4,8 +4,8 @@ function setToken(token){   //token parameter pathbo login-from theke
 }
 
 
-function getToken(token){
-    return localStorage.getItem(token);
+function getToken(){
+    return localStorage.getItem('token'); //key
 }
 
 
@@ -13,6 +13,7 @@ function getToken(token){
 // ai headerToken ke ami profile e niye jabo 
     function HeaderToken(){
         let token=getToken();
+        console.log(token)
         return  {
              headers: {
                  Authorization:token
@@ -29,6 +30,8 @@ function getToken(token){
                        window.location.href="/logout"
                     }
                 }
+            
+
             
 
 
