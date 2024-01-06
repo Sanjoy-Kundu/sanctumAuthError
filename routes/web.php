@@ -10,7 +10,7 @@ Route::post('/user-registration', [UserController::class, "userRegistration"]);
 Route::post('/user-login', [UserController::class, "userLogin"])->name("userLogin");
 // Route::get('/user-profile', [UserController::class,"userProfile"])->middleware(['auth:sanctum']);
 Route::get('/user-profile', [UserController::class,"userProfile"])->middleware('auth:sanctum');
-Route::get('/logout', [UserController::class, "logout"]);
+Route::get('/logout', [UserController::class, "UserLogout"]);
 
 
 

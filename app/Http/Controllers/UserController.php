@@ -59,17 +59,25 @@ class UserController extends Controller
 
 
 
+
+
+
     public function userProfile(Request $request){
        return Auth::user(); 
+       //return "good";
 
     }
 
-    function logout(Request $request){
-        // $request->user()->tokens()->delete();
-        // return redirect('/userLogin');
-        return $request->user();
-    }
+
     
+    function UserLogout(Request $request){
+        $request->user()->tokens()->delete();
+        return redirect('/userLogin');
+    }
+
+
+
+
     
     
     

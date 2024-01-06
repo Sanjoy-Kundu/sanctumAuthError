@@ -18,19 +18,22 @@ function getToken(token){
                  Authorization:token
              }
          }
-
-
-    function unauthorized(code){
-        if(code===401){
-            localStorage.clear();
-            sessionStorage.clear();
-           window.location.href="/logout"
         }
-    }
 
 
 
-     }
+        function unauthorized(code){
+                    if(code == 401){
+                        localStorage.clear();
+                        sessionStorage.clear();
+                       window.location.href="/logout"
+                    }
+                }
+            
+
+
+
+     
 
 
 

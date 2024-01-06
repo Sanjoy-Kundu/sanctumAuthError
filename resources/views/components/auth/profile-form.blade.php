@@ -34,13 +34,26 @@
 
 <script>
 
-function unauthorized(code){
-        if(code===401){
-            localStorage.clear();
-            sessionStorage.clear();
-           window.location.href="/logout"
-        }
-    }
+// function unauthorized(code){
+//         if(code===401){
+//             localStorage.clear();
+//             sessionStorage.clear();
+//            window.location.href="/logout"
+//         }
+//     }
+
+// function unauthorized(code){
+//         if(code == 401){
+//             localStorage.clear();
+//             sessionStorage.clear();
+//            window.location.href="/logout"
+//         }
+//     }
+
+
+
+
+
 
 
 
@@ -48,14 +61,14 @@ getProfile();
     async function getProfile(){
         try{
             showLoader();
-            let res= await axios.get("/user-profile", HeaderToken());
+            let res= await axios.get("/user-profile",HeaderToken());
             hideLoader();
             document.getElementById('email').value=res.data['email'];
-            document.getElementById('mobile').value=res.data['mobile']
-            document.getElementById('name').value=res.data['name']
+            document.getElementById('mobile').value=res.data['mobile'];
+            document.getElementById('name').value=res.data['name'];
 
         }catch (e) {
-           unauthorized(e)
+            unauthorized(e.response.status);
         }
     }
 
